@@ -18,7 +18,6 @@ namespace HotelManagerReponsity.Models
         public RoomManagerEntities()
             : base("name=RoomManagerEntities")
         {
-         //   this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
         }
     

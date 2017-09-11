@@ -37,7 +37,7 @@ namespace HotelManagerReponsity_MVC.Controllers
                     //
                     // Session.Add(HotelManager_MVC.Const.ValueConst.ADMIN_SESSION, _user);
                     // trả về Action Index của controller HomeController
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Room_Booking");
                 }
                 else
                 {

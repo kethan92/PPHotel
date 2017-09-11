@@ -1,0 +1,12 @@
+﻿@model HotelManagerReponsity_MVC.ViewModel.RoomBookingOfBookingViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Room_Booking</h2>
+@using (Html.BeginForm("SearchRoom", "Room_Booking",FormMethod.Post))
+{ 
+    @Html.TextBoxFor(model => model.Date_From, new { type = "date" })
+    @Html.TextBoxFor(model => model.Date_From, new { type = "date" })
+}
+

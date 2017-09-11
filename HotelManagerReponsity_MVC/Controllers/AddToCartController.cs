@@ -27,7 +27,16 @@ namespace HotelManagerReponsity_MVC.Controllers
             }
             else
             {
+               
                 List<RoomOfStatusAndType> li = (List<RoomOfStatusAndType>)Session["cart"];
+                foreach (var item in li)
+                {
+                    if(item.RoomNumber==roo.RoomNumber)
+                    {
+                        ViewBag.Javascript = "<script language='javascript' type='text/javascript'>alert('Data Already Exists');</script>";
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
                 li.Add(roo);
                 Session["cart"] = li;
                 ViewBag.cart = li.Count();
@@ -40,17 +49,16 @@ namespace HotelManagerReponsity_MVC.Controllers
         [HttpGet]
         public ActionResult Myorder()
         {
-            return View((List<RoomOfStatusAndType>)Session["cart"]);
-            //(List<RoomOfStatusAndType>)Session["cart"]
+            ViewBag.getRooms = (List<RoomOfStatusAndType>)Session["cart"];
+
+            return View();
 
         }
         [HttpGet]
-        public ActionResult Remove(int id)
-        {
-            var s = id;
-            
+        public ActionResult Remove(RoomOfStatusAndType roo)
+        { 
             List<RoomOfStatusAndType> li = (List<RoomOfStatusAndType>)Session["cart"];
-            li.RemoveAll(x => x.RoomNumber == id);
+            li.RemoveAll(x => x.RoomNumber == roo.RoomNumber);
             Session["cart"] = li;
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
             return RedirectToAction("Myorder", "AddToCart");

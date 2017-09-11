@@ -21,8 +21,7 @@ namespace HotelManagerReponsity.Models
         }
     
         public int Booking_ID { get; set; }
-        public Nullable<System.DateTime> date_From { get; set; }
-        public Nullable<System.DateTime> date_To { get; set; }
+        public Nullable<decimal> money { get; set; }
         public Nullable<int> Customer_id { get; set; }
     
         public virtual Customer Customer { get; set; }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HotelManagerReponsity_MVC.Models.RoomOfStatusAndType>
+﻿@model HotelManagerReponsity_MVC.ViewModel.RoomBookingOfBookingViewModel
 @{
     ViewBag.Title = "Myorder";
 }
@@ -8,6 +8,9 @@
     
         
         <!-- /.col-lg-12 -->
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
         <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
            
             <div class="row">
@@ -21,9 +24,9 @@
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Price: activate to sort column ascending" style="width: 132px;">Price
                                 </th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 141px;">Date to
+                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 141px;">Date form
                                 </th>
-                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 114px;">Date from
+                                <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 114px;">Date to
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 113px;">Type
                                 </th>
@@ -32,24 +35,28 @@
                             </tr>
                         </thead>
                         <tbody>
-
-                            @foreach (var item in Model)
-                            { 
+                           
+                            @foreach (var item in ViewBag.getRooms)
+                            {
                                 <tr class="gradeX odd" align="center" role="row">
-                                    <td class="sorting_1">@item.RoomNumber</td>
+                                    <td class="sorting_1">
+                                        @item.RoomNumber
+                                    </td>
                                     <td>@item.nameRoom</td>
                                     <td>@item.prince</td>
-                                    <td>@Html.TextBoxFor(model=>model)</td>
-                                    <td>@item.room_Type_Description</td>
+                                    
+                                    <td></td>
+                                    <td></td>
                                     <td>@item.room_Type_Description</td>
                                     <td class="center">
                                         <i class="fa fa-trash-o  fa-fw"></i>
-                                        <a href="@Url.Action("Remove", "AddToCart", @item.RoomNumber)">Delete</a>
+                                        <a href="@Url.Action("Remove", "AddToCart", item)">Delete</a>
                                         
                                     </td>
                                     
                                 </tr>                                
-                            }
+
+                                }
                         </tbody>
                     </table>
                 </div>
@@ -65,12 +72,12 @@
                 </li>
                 <li>
                     <a class="fs-dti-tgop" href="@Url.Action("Index", "Home")" title="">
-                        <p>Continue</p>
-                        <span>Xét duyệt nhanh </span>
+                        <p>Quay lại</p>
+                        
                     </a>
                 </li>
             </ul>
         </div>
-  
+    }
     <!-- /.row -->
 </div>

@@ -10,8 +10,7 @@
             <PropertyRef Name="Booking_ID" />
           </Key>
           <Property Name="Booking_ID" Type="int" Nullable="false" />
-          <Property Name="date_From" Type="datetime" />
-          <Property Name="date_To" Type="datetime" />
+          <Property Name="money" Type="decimal" Precision="18" Scale="0" />
           <Property Name="Customer_id" Type="int" />
         </EntityType>
         <EntityType Name="Customer">
@@ -170,8 +169,7 @@
             <PropertyRef Name="Booking_ID" />
           </Key>
           <Property Name="Booking_ID" Type="Int32" Nullable="false" />
-          <Property Name="date_From" Type="DateTime" Precision="3" />
-          <Property Name="date_To" Type="DateTime" Precision="3" />
+          <Property Name="money" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="Customer_id" Type="Int32" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_Booking_Customer" FromRole="Booking" ToRole="Customer" />
           <NavigationProperty Name="Room_Bookings" Relationship="Self.FK_Room_Bookings_Booking" FromRole="Booking" ToRole="Room_Bookings" />
@@ -340,8 +338,7 @@
             <EntityTypeMapping TypeName="RoomManagerModel.Booking">
               <MappingFragment StoreEntitySet="Booking">
                 <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
-                <ScalarProperty Name="date_From" ColumnName="date_From" />
-                <ScalarProperty Name="date_To" ColumnName="date_To" />
+                <ScalarProperty Name="money" ColumnName="money" />
                 <ScalarProperty Name="Customer_id" ColumnName="Customer_id" />
               </MappingFragment>
             </EntityTypeMapping>

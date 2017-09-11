@@ -5,9 +5,8 @@ using System.Web;
 
 namespace HotelManagerReponsity_MVC.ViewModel
 {
-    public class DateTimeOrder
+    public class Room_BookingViewModel
     {
-        public DateTime DateTo { get; set; }
-        public DateTime DateFrom { get; set; }
+
     }
 }

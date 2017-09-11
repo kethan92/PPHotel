@@ -46,7 +46,8 @@ namespace HotelManagerReponsity_MVC.Controllers
             //model.room_Type_Description = query.room_Type_Description;
             //model.status = query.status;
             //model.room_Standard_Rate = query.room_Standard_Rate;
-            //ViewBag.getRooms = model;
+            //ViewBag.getRooms = query;
+
             return View(query);
         }
     }
