@@ -39,7 +39,7 @@
                                     <td class="sorting_1">@item.RoomNumber</td>
                                     <td>@item.nameRoom</td>
                                     <td>@item.prince</td>
-                                    <td>@item.room_Type_Description</td>
+                                    <td>@Html.TextBoxFor(model=>model)</td>
                                     <td>@item.room_Type_Description</td>
                                     <td>@item.room_Type_Description</td>
                                     <td class="center">
@@ -54,7 +54,22 @@
                     </table>
                 </div>
             </div>
-           
+            <div id="btn-order">
+            </div>
+            <ul class="fs-dtibtn clearfix build-order">
+                <li>
+                    <a class="fs-dti-oder detail-order-2017" href="#" title="">
+                        <p>Save</p>
+                        <span>Hotel uy tín</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="fs-dti-tgop" href="@Url.Action("Index", "Home")" title="">
+                        <p>Continue</p>
+                        <span>Xét duyệt nhanh </span>
+                    </a>
+                </li>
+            </ul>
         </div>
   
     <!-- /.row -->
