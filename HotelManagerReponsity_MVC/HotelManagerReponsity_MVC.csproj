@@ -971,6 +971,7 @@
     <Content Include="Views\Home\DetailRoom.cshtml" />
     <Content Include="Views\AddToCart\Myorder.cshtml" />
     <Content Include="Views\Room_Booking\Index.cshtml" />
+    <Content Include="Views\Room_Booking\SearchRoom.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

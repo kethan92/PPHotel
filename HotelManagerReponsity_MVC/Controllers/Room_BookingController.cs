@@ -1,4 +1,5 @@
-﻿using HotelManagerReponsity_MVC.Models;
+﻿using HotelManagerReponsity.Models;
+using HotelManagerReponsity_MVC.Models;
 using HotelManagerReponsity_MVC.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace HotelManagerReponsity_MVC.Controllers
 {
     public class Room_BookingController : Controller
     {
+        RoomManagerEntities db = new RoomManagerEntities();
         // GET: Room_Booking
         public ActionResult Index()
         {
@@ -19,8 +21,10 @@ namespace HotelManagerReponsity_MVC.Controllers
         public ActionResult SearchRoom(RoomBookingOfBookingViewModel model)
         {
             Room_BookingClient room_booking = new Room_BookingClient();
-            room_booking.getRoom_Booking(model);
-            return;
+            var query = room_booking.getRoom_Booking(model);                                 
+            ViewBag.list = query;                      
+            return View();
+           // return RedirectToAction("Index", "Home");
         }
     }
 }

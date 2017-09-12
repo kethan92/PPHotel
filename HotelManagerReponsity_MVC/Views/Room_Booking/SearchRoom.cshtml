@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "SearchRoom";
+}
+
+<h2>SearchRoom</h2>
+
+@if (ViewBag.list != null)
+{
+    foreach (var item in ViewBag.list)
+    {
+        <span>@item.date_booking_from</span>
+        <br>
+    }
+}

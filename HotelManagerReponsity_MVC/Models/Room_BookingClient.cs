@@ -16,12 +16,13 @@ namespace HotelManagerReponsity_MVC.Models
         {
             try
             {
+                
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(Base_URL);
                 client.DefaultRequestHeaders.Accept.Add(
                     new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.GetAsync("Room_Booking?date_booking_from=" +
-                    model.Date_From+ "&date_booking_to=" + model.Date_To).Result;
+                HttpResponseMessage response = client.GetAsync("Room_Booking/searchroom?date_from=" +
+                    model.Date_From + "&date_to=" + model.Date_To).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     return response.Content.ReadAsAsync<IEnumerable<Room_Booking>>().Result;

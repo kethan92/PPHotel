@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace HotelManagerReponsity.Controllers
 {
@@ -24,15 +25,19 @@ namespace HotelManagerReponsity.Controllers
            // _roomTypeRepository = new Room_TypeRepository();
         }
         // GET: api/Rooms
-        public HttpResponseMessage GetRoom_Booking()
-        {
-            var query = _roomBookingRepository.GetAll();
+        //[HttpGet]
+        //public HttpResponseMessage GetRoom_Booking()
+        //{
+        //    var query = _roomBookingRepository.GetAll();
 
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, query);
-            return response;
-        }
+        //    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, query);
+        //    return response;
+        //}
         // GET: api/Rooms?date_from=??&&date_to=??
-        public HttpResponseMessage GetRoom_Booking(DateTime date_from,DateTime date_to)
+        [HttpGet]
+
+       
+        public HttpResponseMessage searchroom(DateTime date_from,DateTime date_to)
         {
             var query = _roomBookingRepository.getRoom(date_from,date_to);
 
