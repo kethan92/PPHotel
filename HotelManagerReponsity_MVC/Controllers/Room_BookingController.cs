@@ -29,11 +29,12 @@ namespace HotelManagerReponsity_MVC.Controllers
             var roomsList = from x in query_room
                        where !(query.Any(y => y.Room_id == x.RoomNumber))
                        select x;
+          //  XDocument updatedResultsDocument = room_client.UpdateApplicationPools();
             TempData["roomsList"] = roomsList;
             ViewBag.roomsList = roomsList;
             // return View();
 
-            return RedirectToAction("Index", "Home", "roomsList");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
