@@ -80,12 +80,8 @@ namespace HotelManagerReponsity.Controllers
                         };
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, query);
             return query;
-            //if (query == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return Ok(query.Single(x=>x.RoomNumber==RoomNumber));
+           
         }
+       
     }
 }

@@ -58,10 +58,12 @@ namespace HotelManagerReponsity.Controllers
 
             return Ok(room);
         }
+       // public 
 
         // PUT: api/Rooms/5
+        [HttpPut]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutRoom(int id, Room room)
+        public IHttpActionResult PutRoom(int id,Room room)
         {
             if (!ModelState.IsValid)
             {

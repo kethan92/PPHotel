@@ -38,7 +38,7 @@ namespace Repository
 
         public void Update(T entity)
         {
-            dbSet.Attach(entity);
+           // dbSet.Attach(entity);
             roomManagerEntities.Entry(entity).State = EntityState.Modified;
             Save();
         }

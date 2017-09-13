@@ -12,11 +12,13 @@ namespace HotelManagerReponsity_MVC.Controllers
     {
         // GET: Home
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(IEnumerable<HotelManagerReponsity.ViewModel.RoomOfStatusAndType> roomsList)
         {
-            RoomsClient roomsclient = new RoomsClient();
-            var model = roomsclient.getAllRoomOfStatusAndType();
-            ViewBag.roomsList = model;
+            //RoomsClient roomsclient = new RoomsClient();
+            //var model = roomsclient.getAllRoomOfStatusAndType();
+            ViewBag.roomsList = (IEnumerable < HotelManagerReponsity.ViewModel.RoomOfStatusAndType > )TempData["roomsList"];
+           // var a = roomsList;
+           // ViewBag.roomsList = roomsList;
             return View();
         }
         [HttpPost]
